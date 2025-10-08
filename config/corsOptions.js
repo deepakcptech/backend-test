@@ -1,6 +1,7 @@
 const allowedOrigins = [
-  'http://localhost:3000',
-  'https://yourapp.com'
+  "http://localhost:3000",
+  "https://yourapp.com",
+  "https://backend-test-skiv.onrender.com",
 ];
 
 const corsOptions = {
@@ -8,11 +9,11 @@ const corsOptions = {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback(new Error("Not allowed by CORS"));
     }
   },
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
 };
 
 module.exports = corsOptions;
