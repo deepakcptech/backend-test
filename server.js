@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
-// const connectDB = require("./config/database");
+const connectDB = require("./config/database");
 const corsOptions = require("./config/corsOptions");
 const errorHandler = require("./middleware/errorHandler");
 const logger = require("./utils/logger");
@@ -13,7 +13,7 @@ const authRoutes = require("./routes/auth");
 const app = express();
 
 // Connect to database
-// connectDB();
+connectDB();
 
 // Security middleware
 app.use(helmet());
